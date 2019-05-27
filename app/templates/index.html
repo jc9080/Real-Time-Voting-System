@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Voting System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  <!--shrink-to-fit=no-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row" id="headerBar"></div>
+    <div class="row">
+        <div class="col-md-3 no-float" id="leftColumn">
+            <div class="starBanner">
+                <i class="fa fa-star" aria-hidden="true"></i><br><br><br><br><br><br>
+                <i class="fa fa-star" aria-hidden="true"></i><br><br><br><br><br><br>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="col-md-6" id="ballotColumn">
+            <!-- <h1 class="text-center">Ballot</h1> -->
+            <img src="static/header.jpg" class="img-fluid rounded mx-auto d-block" alt="header-ballot" width="70%">
+            <form method="POST" action="http://127.0.0.1:5000/castVote" >
+                <div class="form-group">
+                    <label for="votername"><strong>Name:</strong><br></label>
+                    <input type="text" class="form-control" id="votername" placeholder="Enter Name" name="voter_name" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group required">
+                    <label for="voterid"><strong>Voter ID:</strong><br></label>
+                    <input type="text" class="form-control" id="voterid" placeholder="Enter Voter ID" name="voter_id" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group required">
+                    <p><strong>President</strong><br></p>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="presidentARadio" name="president" class="custom-control-input" value="pa">
+                        <label class="custom-control-label" for="presidentARadio">George Washington</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="presidentBRadio" name="president" class="custom-control-input" value="pb">
+                        <label class="custom-control-label" for="presidentBRadio">John Hancock</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="presidentCRadio" name="president" class="custom-control-input" value="pc">
+                        <label class="custom-control-label" for="presidentCRadio">John Jay</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="presidentDRadio" name="president" class="custom-control-input" value="pd">
+                        <label class="custom-control-label" for="presidentDRadio">George Clinton</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p><strong>Vice President</strong><br></p>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="vpresidentARadio" name="vice_president" class="custom-control-input" value="vpa">
+                        <label class="custom-control-label" for="vpresidentARadio">John Adams</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="vpresidentBRadio" name="vice_president" class="custom-control-input" value="vpb">
+                        <label class="custom-control-label" for="vpresidentBRadio">Aaron Burr</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="vpresidentCRadio" name="vice_president" class="custom-control-input" value="vpc">
+                        <label class="custom-control-label" for="vpresidentCRadio">Thomas Jefferson</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="vpresidentDRadio" name="vice_president" class="custom-control-input" value="vpd">
+                        <label class="custom-control-label" for="vpresidentDRadio">Thomas Pinckney</label>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember" required> I agree to be bound by the Terms of Service laid out on this site.
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Check this checkbox to continue.</div>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" id="ballotSubmitBtn">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-3" id="rightColumn">
+            <div class="starBanner">
+                <i class="fa fa-star" aria-hidden="true"></i><br><br><br><br><br><br>
+                <i class="fa fa-star" aria-hidden="true"></i><br><br><br><br><br><br>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

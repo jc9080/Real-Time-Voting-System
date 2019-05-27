@@ -1,0 +1,32 @@
+#ballotColumn {
+    padding: 0 50px;
+}
+
+#leftColumn {
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rightColumn {
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ballotSubmitBtn {
+    margin-bottom: 10px;
+    background-color: black;
+    border-color: black;
+}
+
+.starBanner .fa {
+    color: white;
+}
+
+#headerBar {
+    height: 7px;
+    background-color: #0066ff;
+}
